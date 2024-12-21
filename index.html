@@ -55,12 +55,12 @@
     <div class="contact">
         <h2>Contact Me</h2>
         <p>Feel free to reach out for collaborations or freelance opportunities!</p>
-        <form id="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <form id="contact-form" action="sendEmail.php" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+    <button type="submit">Send Message</button>
+</form>
     </div>
 </section>
 
