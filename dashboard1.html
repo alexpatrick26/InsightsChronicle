@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Dashboard 1</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,19 +13,23 @@
             <div class="logo">MyPortfolio</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
+                <li class="dropdown">
+                    <a href="dashboard.html" class="dropbtn">Dashboard</a>
+                    <div class="dropdown-content">
+                        <a href="dashboard1.html">Dashboard 1</a>
+                        <a href="dashboard2.html">Dashboard 2</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <!-- Dashboard Section -->
+    <!-- Dashboard 1 Section -->
     <section class="dashboard">
-        <h1>Interactive Dashboard</h1>
-        <div class='tableauPlaceholder' id='viz1734750014160' style='position: relative'>
+        <h1>Dashboard 1</h1>
+        <div class='tableauPlaceholder' id='viz1734752166402' style='position: relative'>
             <noscript>
-                <a href='#'>
-                    <img alt='Dashboard 3' src='https://public.tableau.com/static/images/Co/CoffeeShopSales_16982388354800/Dashboard3/1_rss.png' style='border: none' />
-                </a>
+                <a href='#'><img alt='Dashboard 3' src='https://public.tableau.com/static/images/Co/CoffeeShopSales_16982388354800/Dashboard3/1_rss.png' style='border: none' /></a>
             </noscript>
             <object class='tableauViz' style='display:none;'>
                 <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
@@ -44,27 +48,8 @@
             </object>
         </div>
         <script type='text/javascript'>
-            var divElement = document.getElementById('viz1734750014160');
+            var divElement = document.getElementById('viz1734752166402');
             var vizElement = divElement.getElementsByTagName('object')[0];
-            if (divElement.offsetWidth > 800) { 
-                vizElement.style.width = '1650px'; 
-                vizElement.style.height = '2162px';
-            } else if (divElement.offsetWidth > 500) { 
-                vizElement.style.width = '1650px'; 
-                vizElement.style.height = '2162px'; 
-            } else { 
-                vizElement.style.width = '100%'; 
-                vizElement.style.height = '5377px'; 
-            } 
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-        </script>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
-    </footer>
-</body>
-</html>
+            if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '1650px';
+                vizE
