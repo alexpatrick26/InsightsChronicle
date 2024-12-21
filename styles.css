@@ -166,3 +166,14 @@ footer {
     display: block;
 }
 
+
+.dashboard {
+    text-align: center; /* Centers the section heading */
+    padding: 2rem;
+}
+
+.tableauPlaceholder {
+    margin: 0 auto; /* Centers the Tableau embed */
+    display: block; /* Ensures it's treated as a block-level element */
+}
+
