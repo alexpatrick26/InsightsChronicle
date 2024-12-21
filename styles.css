@@ -250,3 +250,42 @@ footer {
 }
 
 
+
+.logo img {
+    max-height: 50px; /* Adjust the size of the logo */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #222; /* Navbar background */
+    color: white; /* Navbar text color */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00bcd4;
+}
+
+
