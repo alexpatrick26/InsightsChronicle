@@ -46,7 +46,7 @@ a {
 
 /* Hero Section */
 .hero {
-    height: 70vh; /* Change from 100vh to 70vh */
+    height: 40vh; 
     background: linear-gradient(to bottom right, #6a11cb, #2575fc);
     color: white;
     display: flex;
