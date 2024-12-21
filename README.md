@@ -1,1 +1,1 @@
-# scaling-couscous
+# insights-chronicle
