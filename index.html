@@ -24,10 +24,13 @@
             left: 0;
             z-index: 1000;
         }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
             font-weight: 600;
             transition: color 0.3s;
         }
@@ -76,7 +79,7 @@
 <body>
     <nav>
         <div class="logo"> <h2 style="color: white;">Insights Chronicle</h2> </div>
-        <div>
+        <div class="nav-links">
             <a href="#">Home</a>
             <a href="#">Projects</a>
             <a href="#">Contact</a>
