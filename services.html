@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights Chronicle</title>
+    <title>Services - Insights Chronicle</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
+            background: #111;
+            color: white;
         }
         nav {
             display: flex;
@@ -26,7 +27,7 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
         .logo img {
-            height: 90px;
+            height: 80px;
         }
         .nav-links {
             display: flex;
@@ -44,66 +45,83 @@
         .hero {
             text-align: center;
             padding: 100px 20px;
-            background: white;
-            color: black;
+            background: #000;
+            color: white;
             margin-top: 80px;
-            animation: fadeIn 2s ease-in-out;
         }
         .hero h1 {
             font-size: 3rem;
         }
-        .services, .testimonials, .blog, .contact {
-            text-align: center;
+        .services-section {
             padding: 50px;
+            text-align: center;
         }
-        .service-box, .testimonial-box, .blog-post {
-            background: white;
-            padding: 20px;
+        .services-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #f5d06d;
+        }
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .service-box {
+            background: #222;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: left;
             transition: transform 0.3s ease-in-out;
         }
-        .service-box:hover, .testimonial-box:hover, .blog-post:hover {
+        .service-box:hover {
             transform: scale(1.05);
         }
-        .contact form {
-            max-width: 400px;
-            margin: 0 auto;
+        .service-box h3 {
+            color: #f5d06d;
+        }
+        .service-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .service-box ul li {
+            margin: 10px 0;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            align-items: center;
         }
-        .contact input, .contact textarea {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        .service-box ul li::before {
+            content: "✔";
+            color: #f39c12;
+            font-weight: bold;
+            margin-right: 10px;
         }
-        .contact button {
+        .contact-button {
+            display: inline-block;
+            margin-top: 15px;
             background: #f39c12;
             color: white;
-            border: none;
-            padding: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-weight: bold;
             border-radius: 5px;
-            cursor: pointer;
+            transition: background 0.3s;
         }
-        .contact button:hover {
+        .contact-button:hover {
             background: #e67e22;
         }
         footer {
-            background: #111;
+            background: #000;
             color: white;
             text-align: center;
-            padding: 20px 0;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            padding: 20px;
+            margin-top: 30px;
         }
         @media (max-width: 768px) {
-            nav {
+            .service-container {
                 flex-direction: column;
                 align-items: center;
-                padding: 10px;
             }
             .nav-links {
                 flex-direction: column;
@@ -118,58 +136,66 @@
             <img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/New%20-%20LOGO.png" alt="Insights Chronicle Logo">
         </div>
         <div class="nav-links">
-            <a href="#">Home</a>
+            <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="#">Projects</a>
             <a href="#">Contact</a>
         </div>
     </nav>
-    
+
     <section class="hero">
-        <h1>Your Data, Your Insights</h1>
-        <p>We provide cutting-edge data analytics, market research, and email marketing solutions.</p>
+        <h1>Services We Offer</h1>
     </section>
-    
-    <section class="services">
-        <div class="service-box">
-            <h3>Data Analytics</h3>
-            <p>Transform data into decisions.</p>
-        </div>
-        <div class="service-box">
-            <h3>Email Marketing</h3>
-            <p>Engage, Convert, Grow.</p>
-        </div>
-        <div class="service-box">
-            <h3>Market Research</h3>
-            <p>Understand Your Audience.</p>
+
+    <section class="services-section">
+        <h2 class="services-title">Our Expertise</h2>
+        <div class="service-container">
+            
+            <div class="service-box">
+                <h3>Data Analytics</h3>
+                <ul>
+                    <li>Real-time data dashboards</li>
+                    <li>Custom Dashboards & Reports</li>
+                    <li>Advanced Data Visualization</li>
+                    <li>Automated Data Pipelines</li>
+                    <li>BI Tools Integration</li>
+                </ul>
+                <a href="mailto:insightschronicle@gmail.com?subject=Inquiry%20about%20Data%20Analytics" class="contact-button">
+                    Contact for Data Analytics
+                </a>
+            </div>
+
+            <div class="service-box">
+                <h3>Email Marketing</h3>
+                <ul>
+                    <li>Creation Design (Using HubSpot)</li>
+                    <li>Email Campaign Setup</li>
+                    <li>Template Customization</li>
+                    <li>Contact List Management</li>
+                    <li>Basic Performance Tracking</li>
+                </ul>
+                <a href="mailto:insightschronicle@gmail.com?subject=Inquiry%20about%20Email%20Marketing" class="contact-button">
+                    Contact for Email Marketing
+                </a>
+            </div>
+
+            <div class="service-box">
+                <h3>Market Research</h3>
+                <ul>
+                    <li>Qualtrics Advanced Survey Design</li>
+                    <li>Consumer & Competitor Research</li>
+                    <li>Sentiment & Trend Analysis</li>
+                    <li>Data-Driven Decision Making</li>
+                    <li>Custom Research Reports</li>
+                </ul>
+                <a href="mailto:insightschronicle@gmail.com?subject=Inquiry%20about%20Market%20Research" class="contact-button">
+                    Contact for Market Research
+                </a>
+            </div>
+
         </div>
     </section>
-    
-    <section class="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonial-box">
-            <p>"Amazing insights that transformed our business!" - John Doe</p>
-        </div>
-    </section>
-    
-    <section class="blog">
-        <h2>Latest Blog Posts</h2>
-        <div class="blog-post">
-            <h3>Understanding Data Trends</h3>
-            <p>A deep dive into the latest industry analytics.</p>
-        </div>
-    </section>
-    
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-    
+
     <footer>
         <p>&copy; 2025 Insights Chronicle. All rights reserved.</p>
     </footer>
