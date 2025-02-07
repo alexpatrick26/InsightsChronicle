@@ -3,90 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Insights Chronicle</title>
+    <title>Insights Chronicle</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            background: #f4f4f4;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 15px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo img {
+            height: 90px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+        nav a {
+            color: black;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+        nav a:hover {
+            color: #f39c12;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: white;
+            color: black;
+            margin-top: 80px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .services, .testimonials, .blog, .contact {
+            text-align: center;
+            padding: 50px;
+        }
+        .service-box, .testimonial-box, .blog-post {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .service-box:hover, .testimonial-box:hover, .blog-post:hover {
+            transform: scale(1.05);
+        }
+        .contact form {
+            max-width: 400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .contact input, .contact textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact button {
+            background: #f39c12;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact button:hover {
+            background: #e67e22;
+        }
+        footer {
             background: #111;
             color: white;
             text-align: center;
+            padding: 20px 0;
         }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 50px 0;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .service-box {
-            background: #222;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-        .service-box:hover {
-            transform: scale(1.05);
-        }
-        .service-box h2 {
-            color: #f5c542;
-        }
-        .service-container {
-            display: flex;
-            justify-content: space-around;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .contact-btn {
-            display: block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #f5c542;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-        .contact-btn:hover {
-            background: #e0a82b;
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Services Offered</h1>
-        <div class="service-container">
-            <div class="service-box">
-                <h2>Data Analytics</h2>
-                <p>Real-time data dashboards<br>
-                   Custom Dashboards & Reports<br>
-                   Advanced Data Visualization<br>
-                   Automated Data Pipelines<br>
-                   BI Tools Integration</p>
-                <a href="mailto:insightschronicle@example.com?subject=Inquiry%20about%20Data%20Analytics" class="contact-btn">Contact for Data Analytics</a>
-            </div>
-            <div class="service-box">
-                <h2>Email Marketing</h2>
-                <p>Creation Design (Using HubSpot)<br>
-                   Email Campaign Setup<br>
-                   Template Customization<br>
-                   Contact List Management<br>
-                   Basic Performance Tracking</p>
-                <a href="mailto:insightschronicle@example.com?subject=Inquiry%20about%20Email%20Marketing" class="contact-btn">Contact for Email Marketing</a>
-            </div>
-            <div class="service-box">
-                <h2>Market Research (Qualtrics, Surveys)</h2>
-                <p>Qualtrics Advanced Survey Design<br>
-                   Consumer & Competitor Research<br>
-                   Sentiment & Trend Analysis<br>
-                   Data-Driven Decision Making<br>
-                   Custom Research Reports</p>
-                <a href="mailto:insightschronicle@example.com?subject=Inquiry%20about%20Market%20Research" class="contact-btn">Contact for Market Research</a>
-            </div>
+    <nav>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/New%20-%20LOGO.png" alt="Insights Chronicle Logo">
         </div>
-    </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="services.html">Services</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <h1>Your Data, Your Insights</h1>
+        <p>We provide cutting-edge data analytics, market research, and email marketing solutions.</p>
+    </section>
+    
+    <section class="services">
+        <div class="service-box">
+            <h3>Data Analytics</h3>
+            <p>Transform data into decisions.</p>
+        </div>
+        <div class="service-box">
+            <h3>Email Marketing</h3>
+            <p>Engage, Convert, Grow.</p>
+        </div>
+        <div class="service-box">
+            <h3>Market Research</h3>
+            <p>Understand Your Audience.</p>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-box">
+            <p>"Amazing insights that transformed our business!" - John Doe</p>
+        </div>
+    </section>
+    
+    <section class="blog">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-post">
+            <h3>Understanding Data Trends</h3>
+            <p>A deep dive into the latest industry analytics.</p>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Insights Chronicle. All rights reserved.</p>
+    </footer>
 </body>
 </html>
