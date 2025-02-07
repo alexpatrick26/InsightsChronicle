@@ -16,7 +16,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #111;
+            background: white;
             padding: 15px 50px;
             position: fixed;
             width: 100%;
@@ -24,17 +24,20 @@
             left: 0;
             z-index: 1000;
         }
-        .nav-container {
+        .logo {
             display: flex;
-            justify-content: center;
-            flex-grow: 1;
+            align-items: center;
+        }
+        .logo img {
+            height: 70px; /* Increased size */
+            margin-right: 10px;
         }
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 40px;
         }
         nav a {
-            color: white;
+            color: black;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
@@ -45,8 +48,8 @@
         .hero {
             text-align: center;
             padding: 100px 20px;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
+            background: white;
+            color: black;
             margin-top: 60px;
         }
         .hero h1 {
@@ -87,25 +90,22 @@
                 align-items: center;
                 padding: 10px;
             }
-            .nav-container {
-                width: 100%;
-                justify-content: center;
-            }
             .nav-links {
-                gap: 10px;
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
     <nav>
-        <div class="logo"> <h2 style="color: white;">Insights Chronicle</h2> </div>
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Projects</a>
-                <a href="#">Contact</a>
-            </div>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/New%20-%20LOGO.png" alt="Insights Chronicle Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
         </div>
     </nav>
     
