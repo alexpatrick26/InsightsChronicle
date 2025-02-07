@@ -10,11 +10,12 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
+            background: #111;
+            color: white;
         }
         nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             background: white;
             padding: 15px 50px;
@@ -44,76 +45,71 @@
         .hero {
             text-align: center;
             padding: 100px 20px;
-            background: white;
-            color: black;
+            background: black;
+            color: white;
             margin-top: 80px;
             animation: fadeIn 2s ease-in-out;
         }
         .hero h1 {
             font-size: 3rem;
         }
-        .services, .testimonials, .blog, .contact {
+        .insights-section {
             text-align: center;
             padding: 50px;
+            background: #111;
+            color: white;
         }
-        .service-box, .testimonial-box, .blog-post {
-            background: white;
-            padding: 20px;
+        .insights-section h2 {
+            font-size: 2.5rem;
+            color: #f5d06d;
+        }
+        .insights-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .insight-box {
+            background: #222;
+            padding: 25px;
             border-radius: 10px;
+            width: 320px;
+            text-align: left;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
         }
-        .service-box:hover, .testimonial-box:hover, .blog-post:hover {
+        .insight-box:hover {
             transform: scale(1.05);
         }
-        .contact form {
-            max-width: 400px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        .insight-box .icon {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 10px;
+            color: #f5d06d;
         }
-        .contact input, .contact textarea {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .contact button {
-            background: #f39c12;
+        .insight-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
             color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
         }
-        .contact button:hover {
-            background: #e67e22;
-        }
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .insight-box p {
+            font-size: 1rem;
+            color: #ccc;
         }
         @media (max-width: 768px) {
-            nav {
+            .insights-container {
                 flex-direction: column;
                 align-items: center;
-                padding: 10px;
-            }
-            .nav-links {
-                flex-direction: column;
-                text-align: center;
             }
         }
     </style>
 </head>
 <body>
     <nav>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/New%20-%20LOGO.png" alt="Insights Chronicle Logo">
+        </div>
         <div class="nav-links">
             <a href="#">Home</a>
             <a href="services.html">Services</a>
@@ -127,46 +123,32 @@
         <p>We provide cutting-edge data analytics, market research, and email marketing solutions.</p>
     </section>
     
-    <section class="services">
-        <div class="service-box">
-            <h3>Data Analytics</h3>
-            <p>Transform data into decisions.</p>
-        </div>
-        <div class="service-box">
-            <h3>Email Marketing</h3>
-            <p>Engage, Convert, Grow.</p>
-        </div>
-        <div class="service-box">
-            <h3>Market Research</h3>
-            <p>Understand Your Audience.</p>
-        </div>
-    </section>
-    
-    <section class="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonial-box">
-            <p>"Amazing insights that transformed our business!" - John Doe</p>
-        </div>
-    </section>
-    
-    <section class="blog">
-        <h2>Latest Blog Posts</h2>
-        <div class="blog-post">
-            <h3>Understanding Data Trends</h3>
-            <p>A deep dive into the latest industry analytics.</p>
+    <section class="insights-section">
+        <h2>Take action from insights</h2>
+        <div class="insights-container">
+            <div class="insight-box">
+                <span class="icon">🔲</span>
+                <h3>Easy-to-use dashboards</h3>
+                <p>Create intuitive, custom dashboards to visualize your most important metrics. No coding or technical skills required.</p>
+            </div>
+            <div class="insight-box">
+                <span class="icon">🔄</span>
+                <h3>Real-time data updates</h3>
+                <p>Get the latest insights with real-time data refreshes. Stay on top of changes as they happen, keeping your team informed.</p>
+            </div>
+            <div class="insight-box">
+                <span class="icon">✨</span>
+                <h3>Collaborative analytics</h3>
+                <p>Share dashboards and reports with your team for seamless collaboration. Comment, edit, and review data insights together.</p>
+            </div>
+            <div class="insight-box">
+                <span class="icon">⚡</span>
+                <h3>Automated reports</h3>
+                <p>Set up automated reports to be delivered directly to your inbox. Save time and focus on making decisions, not creating reports.</p>
+            </div>
         </div>
     </section>
-    
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-    
+
     <footer>
         <p>&copy; 2025 Insights Chronicle. All rights reserved.</p>
     </footer>
