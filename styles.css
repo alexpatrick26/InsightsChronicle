@@ -77,8 +77,9 @@ footer {
 }
 
 nav {
-    display: flex;
-    justify-content: space-between; /* Ensures logo is left and links are right */
+    display: flex
+;
+    justify-content: center;
     align-items: center;
     background: white;
     padding: 15px 50px;
@@ -88,10 +89,13 @@ nav {
     left: 0;
     z-index: 1000;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-content: flex-end;
+    flex-wrap: nowrap;
 }
 
-.logo {
-    flex: 1; /* Pushes the logo to the left */
+.logo img {
+    height: 86px;
 }
 
 .nav-links {
