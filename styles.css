@@ -76,3 +76,28 @@ footer {
     }
 }
 
+nav {
+    display: flex;
+    justify-content: space-between; /* Ensures logo is left and links are right */
+    align-items: center;
+    background: white;
+    padding: 15px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    flex: 1; /* Pushes the logo to the left */
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    flex: 1;
+    justify-content: center; /* Keeps links centered */
+}
+
