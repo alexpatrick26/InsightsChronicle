@@ -131,7 +131,7 @@ nav {
 }
 
 .arc-btn-retro:hover {
-  box-shadow: 5px 6px 0px white !important; /* White shadow */
-  transform: translateY(-2px); /* Slight hover lift effect */
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8) !important; /* Soft white glow */
+  transform: translateY(-2px);
 }
 
