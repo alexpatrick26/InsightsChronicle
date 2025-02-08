@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,24 +6,64 @@ body {
     text-align: center;
 }
 
+/* Header */
 header {
     background-color: #222;
     color: white;
     padding: 15px;
 }
 
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between; /* Logo on left, nav centered */
+    align-items: center;
+    background: white;
+    padding: 15px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo */
+.logo {
+    flex: 0 0 auto;
+}
+
+.logo img {
+    height: 90px;
+}
+
+/* Navigation Links */
+.nav-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+/* Hero Section */
 .hero {
     background: linear-gradient(to right, #4b6cb7, #182848);
     color: white;
     padding: 50px;
 }
 
+/* Services Section */
 .services {
     display: flex;
     justify-content: space-around;
@@ -35,13 +76,14 @@ nav a {
     border-radius: 8px;
 }
 
+/* Footer */
 footer {
     background-color: #222;
     color: white;
     padding: 10px;
 }
 
-
+/* Project Section */
 .project-container {
     display: flex;
     justify-content: space-between;
@@ -69,69 +111,79 @@ footer {
     color: #ccc;
 }
 
-@media (max-width: 768px) {
-    .project-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-nav {
-    display: flex;
-    justify-content: space-between; /* Keeps the logo on the left and nav links centered */
-    align-items: center;
-    background: white;
-    padding: 15px 50px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-    flex: 0 0 auto; /* Prevents the logo from shrinking */
-}
-
-.logo img {
-    height: 90px;
-}
-
-.nav-links {
-    flex: 1;
-    display: flex;
-    justify-content: center; /* Ensures the nav links are centered */
-    gap: 40px;
-}
-
-.nav-links a {
-    color: black;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease-in-out;
-}
-
-.nav-links a:hover {
-    color: #f39c12;
-}
-
-
+/* Button Styles */
 .arc-btn-retro {
-  width: 136px;
-  height: 46px;
-  background-color: #19fb9b; /* Neon Green */
-  border: 1px solid black;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 17px;
-  transition: box-shadow 0.4s ease-in-out;
-  font-weight: bold;
-  display: inline-block;
+    width: 136px;
+    height: 46px;
+    background-color: #19fb9b; /* Neon Green */
+    border: 1px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: box-shadow 0.4s ease-in-out, transform 0.2s ease-in-out;
+    font-weight: bold;
+    display: inline-block;
 }
 
 .arc-btn-retro:hover {
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8) !important; /* Soft white glow */
-  transform: translateY(-2px);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8) !important; /* Soft white glow */
+    transform: translateY(-2px);
 }
 
+/* 🔥 Responsive Design (Fixing Mobile Issues) */
+@media (max-width: 768px) {
+    /* Navbar: Stack links vertically */
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .logo img {
+        height: 60px; /* Smaller logo on mobile */
+    }
+
+    /* Reduce text size for readability */
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    /* Ensure buttons resize */
+    .arc-btn-retro {
+        width: 100%; /* Full width button */
+        max-width: 200px; /* Prevents it from being too large */
+        font-size: 16px;
+    }
+
+    /* Fix Carousel Layout */
+    .carousel-container {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .carousel img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Stack project text */
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Adjust sections */
+    .projects-section {
+        padding: 60px 10px; /* Reduce padding */
+    }
+}
