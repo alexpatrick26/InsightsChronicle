@@ -1,11 +1,9 @@
-/* Global Styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
-    background: #111;
-    color: white;
 }
 
 /* Header */
@@ -18,7 +16,7 @@ header {
 /* Navigation */
 nav {
     display: flex;
-    justify-content: space-between; /* Keeps the logo on the left and nav links centered */
+    justify-content: space-between;
     align-items: center;
     background: white;
     padding: 15px 50px;
@@ -30,20 +28,10 @@ nav {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo */
-.logo {
-    flex: 0 0 auto; /* Prevents the logo from shrinking */
-}
-
-.logo img {
-    height: 90px;
-}
-
-/* Nav Links */
 .nav-links {
     flex: 1;
     display: flex;
-    justify-content: center; /* Ensures the nav links are centered */
+    justify-content: center;
     gap: 40px;
 }
 
@@ -58,50 +46,38 @@ nav {
     color: #f39c12;
 }
 
+/* Logo */
+.logo {
+    flex: 0 0 auto;
+}
+
+.logo img {
+    height: 90px;
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(to right, #4b6cb7, #182848);
     color: white;
-    padding: 100px 20px;
-    text-align: center;
+    padding: 50px;
 }
 
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
 }
 
-/* Buttons */
-.arc-btn-retro {
-    width: 136px;
-    height: 46px;
-    background-color: #19fb9b; /* Neon Green */
-    border: 1px solid black;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 17px;
-    transition: box-shadow 0.4s ease-in-out, transform 0.3s ease-in-out;
-    font-weight: bold;
-    display: inline-block;
-}
-
-.arc-btn-retro:hover {
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8) !important; /* Soft white glow */
-    transform: translateY(-2px);
-}
-
-/* Services */
+/* Services Section */
 .services {
     display: flex;
     justify-content: space-around;
     padding: 20px;
 }
 
+/* Service Boxes */
 .service-box {
     background-color: #eee;
     padding: 20px;
@@ -115,7 +91,7 @@ footer {
     padding: 10px;
 }
 
-/* Project Section */
+/* Projects Section */
 .project-container {
     display: flex;
     justify-content: space-between;
@@ -143,71 +119,60 @@ footer {
     color: #ccc;
 }
 
-/* ===========================
-   RESPONSIVE DESIGN FIXES (Mobile)
-   =========================== */
-
-/* Adjust Navigation for Mobile */
+/* Responsive Design */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Stack items vertically */
-        text-align: center;
-        padding: 10px;
-    }
-
+    /* Adjust Navigation */
     .nav-links {
-        display: flex;
-        flex-direction: column; /* Stack links */
-        gap: 10px;
-        margin-top: 10px;
+        flex-direction: column;
+        gap: 5px; /* Reduce gap to avoid excess spacing */
+        margin-top: 5px;
     }
 
+    /* Adjust Logo Size for Mobile */
     .logo img {
-        height: 70px; /* Resize for mobile */
+        height: 50px; /* Smaller logo for mobile */
     }
-}
 
-/* Hero Section Adjustments */
-@media (max-width: 768px) {
+    /* Reduce Padding for Hero Section */
     .hero {
-        padding: 50px 20px; /* Reduce padding */
-        text-align: center;
+        padding: 40px 20px; /* Reduce padding */
     }
 
     .hero h1 {
-        font-size: 24px; /* Smaller font size for mobile */
+        font-size: 22px; /* Make text slightly smaller */
     }
 
     .hero p {
         font-size: 16px;
     }
 
+    /* Ensure Button is Properly Spaced */
     .arc-btn-retro {
-        width: 100%;
-        max-width: 180px; /* Keep button size readable */
-    }
-}
-
-/* Center Button on Mobile */
-@media (max-width: 768px) {
-    .hero .arc-btn-retro {
-        display: block;
-        margin: 20px auto; /* Centers it */
-    }
-}
-
-/* Fix Section Spacing */
-@media (max-width: 768px) {
-    .section {
-        padding: 40px 20px; /* Reduce padding for mobile */
+        margin-top: 15px; /* Add space below */
     }
 
+    /* Make Project Containers Stack */
     .project-container {
-        flex-direction: column; /* Stack items */
+        flex-direction: column;
+        align-items: center;
     }
+}
 
-    .project-text {
-        text-align: center; /* Center text */
-        padding: 15px;
-    }
+/* Button Styling */
+.arc-btn-retro {
+    width: 136px;
+    height: 46px;
+    background-color: #19fb9b; /* Neon Green */
+    border: 1px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: box-shadow 0.4s ease-in-out;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.arc-btn-retro:hover {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8) !important; /* Soft white glow */
+    transform: translateY(-2px);
 }
