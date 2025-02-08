@@ -15,7 +15,7 @@
         }
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             background: white;
             padding: 15px 50px;
@@ -27,7 +27,7 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
         .logo img {
-            height: 90px;
+            height: 60px;
         }
         .nav-links {
             display: flex;
@@ -54,16 +54,16 @@
             position: relative;
             max-width: 600px;
             margin: 0 auto;
-            overflow: hidden;
         }
         .carousel {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            overflow: hidden;
             width: 100%;
+            border-radius: 10px;
         }
         .carousel-slide {
             min-width: 100%;
-            flex: 0 0 100%;
+            transition: transform 0.5s ease-in-out;
         }
         .carousel img {
             width: 100%;
@@ -81,15 +81,25 @@
             border-radius: 50%;
             font-size: 24px;
         }
-        .prev { left: 10px; }
-        .next { right: 10px; }
-        .project-text {
+        .prev { left: -50px; }
+        .next { right: -50px; }
+        
+        /* New Three Box Layout */
+        .project-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
             margin-top: 20px;
-            max-width: 600px;
-            text-align: left;
+            padding: 0 50px;
+        }
+        .project-text {
+            flex: 1;
             padding: 20px;
             background: #222;
             border-radius: 10px;
+            text-align: left;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
         .project-text h2 {
             font-size: 1.8rem;
@@ -99,10 +109,16 @@
             font-size: 1rem;
             color: #ccc;
         }
+
         @media (max-width: 768px) {
             .carousel-container {
                 flex-direction: column;
                 align-items: center;
+            }
+            .project-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 20px;
             }
             .prev, .next {
                 top: 90%;
@@ -144,48 +160,20 @@
             <button class="next" onclick="moveSlide(1)">❯</button>
         </div>
         
-        <div class="project-text">
-            <h2>Powerful Data Visualizations</h2>
-            <p>Our dashboards provide real-time insights into key business metrics, enabling data-driven decision-making. From revenue tracking to customer engagement, our visualizations simplify complex data for actionable insights.</p>
-        </div>
-    </section><br>
-	
-	<section class="projects-section">
-        <h1>Our Data Analytics Dashboards</h1>
-        <div class="carousel-container">
-            <button class="prev" onclick="moveSlide(-1)">❮</button>
-            <div class="carousel">
-                <div class="carousel-slide"><img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard1.png" alt="Dashboard 1"></div>
-                <div class="carousel-slide"><img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard2.png" alt="Dashboard 2"></div>
-                <div class="carousel-slide"><img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard3.png" alt="Dashboard 3"></div>
-                <div class="carousel-slide"><img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard4.png" alt="Dashboard 4"></div>
-                <div class="carousel-slide"><img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard5.png" alt="Dashboard 5"></div>
-                <div class="carousel-slide"><img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard6.png" alt="Dashboard 6"></div>
-                <div class="carousel-slide"><img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard7.png" alt="Dashboard 7"></div>
-                <div class="carousel-slide"><img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard8.png" alt="Dashboard 8"></div>
-                <div class="carousel-slide"><img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard9.png" alt="Dashboard 9"></div>
-                <div class="carousel-slide"><img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard10.png" alt="Dashboard 10"></div>
-                <div class="carousel-slide"><img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard11.png" alt="Dashboard 11"></div>
-            </div>
-            <button class="next" onclick="moveSlide(1)">❯</button>
-        </div>
-        
         <div class="project-container">
-    <div class="project-text">
-        <h2>Powerful Data Visualizations</h2>
-        <p>Our dashboards provide real-time insights into key business metrics, enabling data-driven decision-making. From revenue tracking to customer engagement, our visualizations simplify complex data for actionable insights.</p>
-    </div>
-
-    <div class="project-text">
-        <h2>Custom Reporting Solutions</h2>
-        <p>Our tailored reports allow businesses to extract meaningful insights, automate data analysis, and focus on strategies that drive growth.</p>
-    </div>
-
-    <div class="project-text">
-        <h2>Interactive Data Exploration</h2>
-        <p>Explore data dynamically with our interactive dashboards, enabling deep dives into performance trends and customer behaviors.</p>
-    </div>
-</div>
+            <div class="project-text">
+                <h2>Powerful Data Visualizations</h2>
+                <p>Our dashboards provide real-time insights into key business metrics, enabling data-driven decision-making. From revenue tracking to customer engagement, our visualizations simplify complex data for actionable insights.</p>
+            </div>
+            <div class="project-text">
+                <h2>Custom Reporting Solutions</h2>
+                <p>Our tailored reports allow businesses to extract meaningful insights, automate data analysis, and focus on strategies that drive growth.</p>
+            </div>
+            <div class="project-text">
+                <h2>Interactive Data Exploration</h2>
+                <p>Explore data dynamically with our interactive dashboards, enabling deep dives into performance trends and customer behaviors.</p>
+            </div>
+        </div>
     </section>
 
     <script>
@@ -194,22 +182,9 @@
         function moveSlide(direction) {
             const slides = document.querySelectorAll(".carousel-slide");
             const totalSlides = slides.length;
-            const carousel = document.querySelector(".carousel");
-
-            currentIndex += direction;
-            if (currentIndex < 0) {
-                currentIndex = totalSlides - 1;
-            } else if (currentIndex >= totalSlides) {
-                currentIndex = 0;
-            }
-
-            const offset = -currentIndex * 100;
-            carousel.style.transform = `translateX(${offset}%)`;
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+            document.querySelector(".carousel").style.transform = `translateX(-${currentIndex * 100}%)`;
         }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            moveSlide(0); // Initialize the first slide
-        });
     </script>
 </body>
 </html>
