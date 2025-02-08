@@ -125,16 +125,12 @@ nav {
   border-radius: 6px;
   cursor: pointer;
   font-size: 17px;
-  transition: 0.4s;
+  transition: box-shadow 0.4s ease-in-out;
   font-weight: bold;
   display: inline-block;
 }
 
 .arc-btn-retro:hover {
-  box-shadow: 5px 6px 0px rgb(0, 0, 0); /* Black Shadow Effect */
+  box-shadow: 5px 6px 0px black !important; /* Force black shadow */
+  transform: translateY(-2px); /* Slight hover lift effect */
 }
-
-.arc-btn-retro:hover {
-  box-shadow: 5px 6px 0px rgb(0, 0, 0) !important;
-}
-
