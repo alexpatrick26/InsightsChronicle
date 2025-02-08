@@ -1,4 +1,4 @@
-/* Base Styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,17 +6,16 @@ body {
     text-align: center;
 }
 
-/* Header */
+/* Header & Navigation */
 header {
     background-color: #222;
     color: white;
-    padding: 15px;
+    padding: 10px 0;
 }
 
-/* Navigation */
 nav {
     display: flex;
-    justify-content: space-between; /* Logo on left, nav centered */
+    justify-content: space-between; /* Keeps logo on left, links on right */
     align-items: center;
     background: white;
     padding: 15px 50px;
@@ -28,20 +27,12 @@ nav {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo */
-.logo {
-    flex: 0 0 auto;
-}
-
 .logo img {
     height: 90px;
 }
 
-/* Navigation Links */
 .nav-links {
-    flex: 1;
     display: flex;
-    justify-content: center;
     gap: 40px;
 }
 
@@ -54,6 +45,30 @@ nav {
 
 .nav-links a:hover {
     color: #f39c12;
+}
+
+/* Responsive Navigation for Mobile */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 20px;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        display: block;
+    }
+
+    .logo img {
+        height: 70px; /* Reduce logo size */
+    }
 }
 
 /* Hero Section */
@@ -76,13 +91,6 @@ nav {
     border-radius: 8px;
 }
 
-/* Footer */
-footer {
-    background-color: #222;
-    color: white;
-    padding: 10px;
-}
-
 /* Project Section */
 .project-container {
     display: flex;
@@ -101,89 +109,80 @@ footer {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.project-text h2 {
-    font-size: 1.8rem;
-    color: #f5d06d;
+/* Responsive Projects Section */
+@media (max-width: 768px) {
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-.project-text p {
-    font-size: 1rem;
-    color: #ccc;
+/* Carousel Styling */
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 1100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+}
+
+.carousel img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+}
+
+/* Mobile Font Sizing */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .project-text h2 {
+        font-size: 20px;
+    }
 }
 
 /* Button Styles */
 .arc-btn-retro {
-    width: 136px;
-    height: 46px;
+    width: 90%;
+    max-width: 200px;
+    text-align: center;
     background-color: #19fb9b; /* Neon Green */
     border: 1px solid black;
     border-radius: 6px;
     cursor: pointer;
     font-size: 17px;
-    transition: box-shadow 0.4s ease-in-out, transform 0.2s ease-in-out;
+    transition: box-shadow 0.4s ease-in-out;
     font-weight: bold;
     display: inline-block;
+    padding: 10px;
 }
 
 .arc-btn-retro:hover {
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8) !important; /* Soft white glow */
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8) !important; /* Soft white glow */
     transform: translateY(-2px);
-}
-
-/* 🔥 Responsive Design (Fixing Mobile Issues) */
-@media (max-width: 768px) {
-    /* Navbar: Stack links vertically */
-    nav {
-        flex-direction: column;
-        padding: 10px;
-    }
-    
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-    .logo img {
-        height: 60px; /* Smaller logo on mobile */
-    }
-
-    /* Reduce text size for readability */
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    p {
-        font-size: 0.9rem;
-    }
-
-    /* Ensure buttons resize */
-    .arc-btn-retro {
-        width: 100%; /* Full width button */
-        max-width: 200px; /* Prevents it from being too large */
-        font-size: 16px;
-    }
-
-    /* Fix Carousel Layout */
-    .carousel-container {
-        max-width: 100%;
-        overflow: hidden;
-    }
-
-    .carousel img {
-        width: 100%;
-        height: auto;
-    }
-
-    /* Stack project text */
-    .project-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    /* Adjust sections */
-    .projects-section {
-        padding: 60px 10px; /* Reduce padding */
-    }
 }
