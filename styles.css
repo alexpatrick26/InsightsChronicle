@@ -1,21 +1,24 @@
-/* General Styles */
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
+    background: #111;
+    color: white;
 }
 
-/* Header & Navigation */
+/* Header */
 header {
     background-color: #222;
     color: white;
-    padding: 10px 0;
+    padding: 15px;
 }
 
+/* Navigation */
 nav {
     display: flex;
-    justify-content: space-between; /* Keeps logo on left, links on right */
+    justify-content: space-between; /* Keeps the logo on the left and nav links centered */
     align-items: center;
     background: white;
     padding: 15px 50px;
@@ -27,12 +30,20 @@ nav {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo */
+.logo {
+    flex: 0 0 auto; /* Prevents the logo from shrinking */
+}
+
 .logo img {
     height: 90px;
 }
 
+/* Nav Links */
 .nav-links {
+    flex: 1;
     display: flex;
+    justify-content: center; /* Ensures the nav links are centered */
     gap: 40px;
 }
 
@@ -47,38 +58,44 @@ nav {
     color: #f39c12;
 }
 
-/* Responsive Navigation for Mobile */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 20px;
-    }
-
-    .nav-links {
-        flex-direction: column; /* Stack links vertically */
-        gap: 20px;
-        text-align: center;
-    }
-
-    .nav-links a {
-        font-size: 18px;
-        display: block;
-    }
-
-    .logo img {
-        height: 70px; /* Reduce logo size */
-    }
-}
-
 /* Hero Section */
 .hero {
     background: linear-gradient(to right, #4b6cb7, #182848);
     color: white;
-    padding: 50px;
+    padding: 100px 20px;
+    text-align: center;
 }
 
-/* Services Section */
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.arc-btn-retro {
+    width: 136px;
+    height: 46px;
+    background-color: #19fb9b; /* Neon Green */
+    border: 1px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: box-shadow 0.4s ease-in-out, transform 0.3s ease-in-out;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.arc-btn-retro:hover {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8) !important; /* Soft white glow */
+    transform: translateY(-2px);
+}
+
+/* Services */
 .services {
     display: flex;
     justify-content: space-around;
@@ -89,6 +106,13 @@ nav {
     background-color: #eee;
     padding: 20px;
     border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 10px;
 }
 
 /* Project Section */
@@ -109,80 +133,81 @@ nav {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Projects Section */
+.project-text h2 {
+    font-size: 1.8rem;
+    color: #f5d06d;
+}
+
+.project-text p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN FIXES (Mobile)
+   =========================== */
+
+/* Adjust Navigation for Mobile */
 @media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+        padding: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column; /* Stack links */
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .logo img {
+        height: 70px; /* Resize for mobile */
+    }
+}
+
+/* Hero Section Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 20px; /* Reduce padding */
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .arc-btn-retro {
+        width: 100%;
+        max-width: 180px; /* Keep button size readable */
+    }
+}
+
+/* Center Button on Mobile */
+@media (max-width: 768px) {
+    .hero .arc-btn-retro {
+        display: block;
+        margin: 20px auto; /* Centers it */
+    }
+}
+
+/* Fix Section Spacing */
+@media (max-width: 768px) {
+    .section {
+        padding: 40px 20px; /* Reduce padding for mobile */
+    }
+
     .project-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/* Carousel Styling */
-.carousel-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 1100%;
-}
-
-.carousel-slide {
-    min-width: 100%;
-}
-
-.carousel img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-}
-
-/* Footer */
-footer {
-    background-color: #222;
-    color: white;
-    padding: 10px;
-}
-
-/* Mobile Font Sizing */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 24px;
+        flex-direction: column; /* Stack items */
     }
 
-    p {
-        font-size: 14px;
+    .project-text {
+        text-align: center; /* Center text */
+        padding: 15px;
     }
-
-    .project-text h2 {
-        font-size: 20px;
-    }
-}
-
-/* Button Styles */
-.arc-btn-retro {
-    width: 90%;
-    max-width: 200px;
-    text-align: center;
-    background-color: #19fb9b; /* Neon Green */
-    border: 1px solid black;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 17px;
-    transition: box-shadow 0.4s ease-in-out;
-    font-weight: bold;
-    display: inline-block;
-    padding: 10px;
-}
-
-.arc-btn-retro:hover {
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8) !important; /* Soft white glow */
-    transform: translateY(-2px);
 }
