@@ -18,7 +18,7 @@
             justify-content: center;
             align-items: center;
             background: white;
-            padding: 15px;
+            padding: 15px 50px;
             position: fixed;
             width: 100%;
             top: 0;
@@ -39,80 +39,76 @@
         nav a:hover {
             color: #f39c12;
         }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
+        .projects-section {
+            text-align: center;
             padding: 100px 20px;
             margin-top: 80px;
         }
-        
-        .carousel {
-            position: relative;
-            width: 500px;
-            height: 300px;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-        }
         .carousel-container {
             display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            border-radius: 10px;
+        }
+        .carousel-slide {
+            min-width: 100%;
             transition: transform 0.5s ease-in-out;
         }
         .carousel img {
-            width: 500px;
-            height: 300px;
-            object-fit: cover;
+            width: 100%;
+            border-radius: 10px;
         }
-        .carousel button {
+        .prev, .next {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.6);
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            font-size: 18px;
+            background: rgba(255, 255, 255, 0.3);
             color: black;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            font-size: 24px;
         }
-        #prev {
-            left: 10px;
+        .prev { left: -50px; }
+        .next { right: -50px; }
+        .project-text {
+            margin-top: 20px;
+            max-width: 600px;
+            text-align: left;
+            padding: 20px;
+            background: #222;
+            border-radius: 10px;
         }
-        #next {
-            right: 10px;
-        }
-
-        .project-description {
-            max-width: 500px;
-        }
-
-        .project-description h2 {
+        .project-text h2 {
+            font-size: 1.8rem;
             color: #f5d06d;
         }
-
+        .project-text p {
+            font-size: 1rem;
+            color: #ccc;
+        }
         @media (max-width: 768px) {
-            .container {
+            .carousel-container {
                 flex-direction: column;
-                text-align: center;
+                align-items: center;
             }
-            .carousel {
-                width: 100%;
-                height: auto;
-            }
-            .carousel img {
-                width: 100%;
-                height: auto;
+            .prev, .next {
+                top: 90%;
+                transform: translateY(-50%);
             }
         }
     </style>
 </head>
 <body>
-
     <nav>
         <div class="nav-links">
             <a href="index.html">Home</a>
@@ -122,46 +118,39 @@
         </div>
     </nav>
 
-    <section class="container">
-        <!-- Left: Carousel -->
-        <div class="carousel">
-            <button id="prev">&#10094;</button>
-            <div class="carousel-container">
-                <img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/images/dashboard1.png" alt="Dashboard 1">
-                <img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/images/dashboard2.png" alt="Dashboard 2">
-                <img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/images/dashboard3.png" alt="Dashboard 3">
+    <section class="projects-section">
+        <h1>Our Data Analytics Dashboards</h1>
+        <div class="carousel-container">
+            <button class="prev" onclick="moveSlide(-1)">❮</button>
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard1.png" alt="Dashboard 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard2.png" alt="Dashboard 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://raw.githubusercontent.com/alexpatrick26/InsightsChronicle/main/dashboard3.png" alt="Dashboard 3">
+                </div>
             </div>
-            <button id="next">&#10095;</button>
+            <button class="next" onclick="moveSlide(1)">❯</button>
         </div>
-
-        <!-- Right: Text Description -->
-        <div class="project-description">
-            <h2>Our Data Dashboards</h2>
-            <p>We provide real-time data visualization solutions tailored to business needs. Our dashboards allow users to track key performance indicators, monitor business trends, and make data-driven decisions with ease.</p>
-            <p>Each dashboard is designed for efficiency, offering automated reports, AI-powered insights, and dynamic filtering options.</p>
+        
+        <div class="project-text">
+            <h2>Powerful Data Visualizations</h2>
+            <p>Our dashboards provide real-time insights into key business metrics, enabling data-driven decision-making. From revenue tracking to customer engagement, our visualizations simplify complex data for actionable insights.</p>
         </div>
     </section>
 
     <script>
-        let index = 0;
-        const images = document.querySelectorAll('.carousel-container img');
-        const totalImages = images.length;
-        const container = document.querySelector('.carousel-container');
+        let currentIndex = 0;
 
-        document.getElementById('next').addEventListener('click', function () {
-            index = (index + 1) % totalImages;
-            updateCarousel();
-        });
-
-        document.getElementById('prev').addEventListener('click', function () {
-            index = (index - 1 + totalImages) % totalImages;
-            updateCarousel();
-        });
-
-        function updateCarousel() {
-            container.style.transform = `translateX(${-index * 500}px)`;
+        function moveSlide(direction) {
+            const slides = document.querySelectorAll(".carousel-slide");
+            const totalSlides = slides.length;
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+            document.querySelector(".carousel").style.transform = `translateX(-${currentIndex * 100}%)`;
         }
     </script>
-
 </body>
 </html>
