@@ -78,7 +78,7 @@ footer {
 
 nav {
     display: flex;
-    justify-content: space-between;  /* Ensures the logo is on the left and links are centered */
+    justify-content: space-between; /* Ensures logo is left and links are centered */
     align-items: center;
     background: white;
     padding: 15px 50px;
@@ -88,25 +88,16 @@ nav {
     left: 0;
     z-index: 1000;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    flex-direction: row; /* Ensures logo and links are in a row */
-    flex-wrap: nowrap;
 }
 
 .logo {
-    flex: 0; /* Ensures the logo stays on the left */
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-    height: 86px;
+    height: 90px;
 }
-
-.nav-links {
-    display: flex;
-    gap: 40px;
-    flex: 1;
-    justify-content: center; /* Keeps navigation links centered */
-}
-
 
 .nav-links {
     display: flex;
@@ -114,4 +105,5 @@ nav {
     flex: 1;
     justify-content: center; /* Keeps links centered */
 }
+
 
