@@ -133,3 +133,8 @@ nav {
 .arc-btn-retro:hover {
   box-shadow: 5px 6px 0px rgb(0, 0, 0); /* Black Shadow Effect */
 }
+
+.arc-btn-retro:hover {
+  box-shadow: 5px 6px 0px rgb(0, 0, 0) !important;
+}
+
