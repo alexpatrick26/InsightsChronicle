@@ -118,7 +118,7 @@ nav {
 
 
 
-.arc-btn-retro {
+button {
   width: 136px;
   height: 46px;
   background-color: #19fb9b;
@@ -126,10 +126,10 @@ nav {
   border-radius: 6px;
   cursor: pointer;
   font-size: 17px;
-  transition: 0.4s;
+  transition: .4s;
 }
 
-.arc-btn-retro:hover {
+button:hover {
   box-shadow: 5px 6px 0px rgb(0, 0, 0);
 }
 
