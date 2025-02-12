@@ -176,3 +176,55 @@ footer {
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8) !important; /* Soft white glow */
     transform: translateY(-2px);
 }
+
+.about-me-section {
+    padding: 50px;
+    background: #111;
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.about-box {
+    background: black;
+    padding: 30px;
+    border-radius: 15px;
+    color: white;
+    width: 48%; /* Adjusted width to fit side by side */
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.about-box h2 {
+    color: #f5d06d;
+}
+
+.about-box p {
+    color: #ccc;
+}
+
+.profile-img {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Ensure they stack ONLY on small screens */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-box {
+        width: 90%;
+    }
+}
