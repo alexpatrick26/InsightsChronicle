@@ -119,22 +119,42 @@ footer {
     color: #ccc;
 }
 
-/* About Section */
+/* Button Styling */
+.arc-btn-retro {
+    width: 136px;
+    height: 46px;
+    background-color: #19fb9b; /* Neon Green */
+    border: 1px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: box-shadow 0.4s ease-in-out;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.arc-btn-retro:hover {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8) !important; /* Soft white glow */
+    transform: translateY(-2px);
+}
+
+/* ===== ABOUT ME SECTION (NEW) ===== */
 .about-me-section {
     padding: 50px;
     background: #111;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .about-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 40px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevent stacking on desktop */
     max-width: 1200px;
-    width: 100%;
+    width: 90%;
 }
 
 .about-box {
@@ -142,10 +162,12 @@ footer {
     padding: 30px;
     border-radius: 15px;
     color: white;
-    width: 48%;
+    flex: 1; /* Ensures both boxes take equal width */
     box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+    min-height: 100%;
 }
 
+/* Styling for About Section Text */
 .about-box h2 {
     color: #f5d06d;
 }
@@ -154,6 +176,7 @@ footer {
     color: #ccc;
 }
 
+/* Profile Image */
 .profile-img {
     width: 80px;
     height: auto;
@@ -166,22 +189,22 @@ footer {
     /* Adjust Navigation */
     .nav-links {
         flex-direction: column;
-        gap: 5px;
+        gap: 5px; /* Reduce gap to avoid excess spacing */
         margin-top: 5px;
     }
 
     /* Adjust Logo Size for Mobile */
     .logo img {
-        height: 50px;
+        height: 50px; /* Smaller logo for mobile */
     }
 
     /* Reduce Padding for Hero Section */
     .hero {
-        padding: 40px 20px;
+        padding: 40px 20px; /* Reduce padding */
     }
 
     .hero h1 {
-        font-size: 22px;
+        font-size: 22px; /* Make text slightly smaller */
     }
 
     .hero p {
@@ -190,7 +213,7 @@ footer {
 
     /* Ensure Button is Properly Spaced */
     .arc-btn-retro {
-        margin-top: 15px;
+        margin-top: 15px; /* Add space below */
     }
 
     /* Make Project Containers Stack */
@@ -199,7 +222,7 @@ footer {
         align-items: center;
     }
 
-    /* Ensure About Boxes Stack on Mobile */
+    /* ✅ FIXED: Make About Boxes Stack on Mobile */
     .about-container {
         flex-direction: column;
         align-items: center;
@@ -208,23 +231,4 @@ footer {
     .about-box {
         width: 90%;
     }
-}
-
-/* Button Styling */
-.arc-btn-retro {
-    width: 136px;
-    height: 46px;
-    background-color: #19fb9b;
-    border: 1px solid black;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 17px;
-    transition: box-shadow 0.4s ease-in-out;
-    font-weight: bold;
-    display: inline-block;
-}
-
-.arc-btn-retro:hover {
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8) !important;
-    transform: translateY(-2px);
 }
